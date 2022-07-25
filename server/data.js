@@ -8,7 +8,6 @@ const posts = [
         love: 0,
         like: 0,
         dontlike: 0,
-        response: "text",
       },
     ],
   },
