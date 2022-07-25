@@ -1,7 +1,4 @@
-const each = require("jest-each").default; // to get each to work
-
-const { listener, port } = require("../index");
-console.log(listener);
+const { port } = require("../index");
 
 describe("Testing Listener", () => {
   test("Test to ensure port is 3000", () => {
