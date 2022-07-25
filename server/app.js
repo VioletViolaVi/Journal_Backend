@@ -6,8 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(__dirname + "/../client"));
+const path = require("path");
+
 app.get("/", (req, res) => {
   res.status(200).send("Hello World");
+  // res.sendFile(path.resolve("../client/index.html"))
 });
 
 app.get("/posts", (req, res) => {
@@ -36,10 +40,6 @@ app.get("/posts/comments/like", (req, res) => {
 
 app.get("/posts/comments/dontlike", (req, res) => {
   res.status(200).send(data[0].comments[0].dontlike.toString()); // needs .toString() to show
-});
-
-app.get("/posts/comments/response", (req, res) => {
-  res.status(200).send(data[0].comments[0].response);
 });
 
 app.get("/posts/:id", (req, res) => {
