@@ -7,6 +7,5 @@ const listener = app.listen(port, () => {
 });
 
 module.exports = {
-  listener,
   port,
 };
