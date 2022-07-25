@@ -25,7 +25,7 @@ app.get("/userPosts", (req, res) => {
 app.post("/userPosts", (req, res) => {
   const newUserPost = req.body;
 
-  newUserPost.id = data.length + 1; // for incrementing id num
+  // newUserPost.id = data.length + 1; // for incrementing id num
 
   data.push(newUserPost);
 
@@ -38,30 +38,31 @@ app.post("/userPosts", (req, res) => {
 app.get("/userPosts/:id", (req, res) => {
   const id = req.params.id;
 
-  /*************************************************************** added */
-
-  const userPostToFind = data.filter((userPostObj) => {
-    return userPostObj.id === parseInt(id); // id would be a string otherwise
-  });
-
-  // if not present return 404
-  if (!userPostToFind) {
-    res.status(404).send("this user post could not be found");
-    return;
+  if (parseInt(id) <= 0 || parseInt(id) > data.length) {
+    throw `there's no user post at id ${id}`;
   }
 
-  // error handling
-  if (userPostToFind.length === 1) {
-    res.status(200).send(userPostToFind[0]);
-    return;
-  } else {
-    res.status(404).send("there's no user post with that id");
-    return;
-  }
+  res.status(200).send(data[id - 1].singleJournalEntry);
 
-  /*************************************************************** added */
+  // --- error handling for ids ---
+  // const userPostToFind = data.filter((userPostObj) => {
+  //   return userPostObj.id === parseInt(id); // id would be a string otherwise
+  // });
 
-  // res.status(200).send(data[id - 1].singleJournalEntry);
+  // // if not present return 404
+  // if (!userPostToFind) {
+  //   res.status(404).send("this user post could not be found");
+  //   return;
+  // }
+
+  // // error handling
+  // if (userPostToFind.length === 1) {
+  //   res.status(200).send(userPostToFind[0]);
+  //   return;
+  // } else {
+  //   res.status(404).send("there's no user post with that id");
+  //   return;
+  // }
 });
 
 app.get("/userPosts/:id/singleJournalEntry", (req, res) => {
