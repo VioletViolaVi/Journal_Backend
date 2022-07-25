@@ -1,5 +1,6 @@
 const userPosts = [
   {
+    id: 1,
     singleJournalEntry: "original single user entry goes here, 1", // original user journal entry
     commentsSection: [
       "comments for 1st entry",
@@ -16,6 +17,7 @@ const userPosts = [
   },
 
   {
+    id: 2,
     singleJournalEntry: "original single user entry goes here, 2", // original user journal entry
     commentsSection: [
       "comments for 2nd entry",
@@ -32,6 +34,7 @@ const userPosts = [
   },
 
   {
+    id: 3,
     singleJournalEntry: "original single user entry goes here, 3", // original user journal entry
     commentsSection: [
       "comments for 3rd entry",
