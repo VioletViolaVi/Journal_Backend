@@ -13,7 +13,6 @@ const userPosts = [
       like: 1,
       dontlike: 1,
     },
-    id: 1,
   },
 
   {
@@ -30,7 +29,6 @@ const userPosts = [
       like: 2,
       dontlike: 2,
     },
-    id: 2,
   },
 
   {
@@ -47,7 +45,6 @@ const userPosts = [
       like: 3,
       dontlike: 3,
     },
-    id: 3,
   },
 ];
 
