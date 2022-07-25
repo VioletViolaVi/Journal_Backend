@@ -10,5 +10,6 @@ function listenFunc() {
     return `Listening on port ${portHost()}...`;
   });
 }
+listenFunc();
 
 module.exports = { portHost, listenFunc };
