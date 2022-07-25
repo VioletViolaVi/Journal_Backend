@@ -11,9 +11,39 @@
   </head>
   <body>
     <main>
-      <header>
-        <h1>Hello World</h1>
-      </header>
+      <form>
+        <label for="posts">Comments</label>
+        <textarea
+          name="posts"
+          id="posts"
+          cols="30"
+          rows="10"
+          placeholder="enter comment (max 500)"
+          maxlength="500"
+        ></textarea>
+
+        <p>
+          <input type="radio" name="emojis" id="thumbsUp" value="thumbsUp" />
+          <label for="thumbsUp">Thumbs Up</label>
+
+          <input type="radio" name="emojis" id="heart" value="heart" />
+          <label for="heart">Heart</label>
+
+          <input
+            type="radio"
+            name="emojis"
+            id="dislikeFace"
+            value="dislikeFace"
+          />
+          <label for="dislikeFace">Dislike Face</label>
+        </p>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <section>
+        <p id="results"></p>
+      </section>
     </main>
   </body>
 </html>
