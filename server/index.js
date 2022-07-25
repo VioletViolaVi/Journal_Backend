@@ -1,11 +1,17 @@
 const app = require("./app");
 
-const port = 3000;
+function portHost() {
+  const port = 4000;
+  return port;
+}
 
-const listener = app.listen(port, () => {
-  console.log(`Listening on port ${port}...`);
-});
+function listenFunc() {
+  const listener = app.listen(portHost(), () => {
+    return `Listening on port ${portHost()}...`;
+  });
 
-module.exports = {
-  port,
-};
+  return listener;
+}
+// console.log("listenFunc() ==>", listenFunc());
+
+module.exports = { portHost, listenFunc };
