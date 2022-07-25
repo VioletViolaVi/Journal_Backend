@@ -2,18 +2,22 @@ const thumbsUpCount = 0;
 const heartCount = 0;
 const dislikeCount = 0;
 
-function handleSubmit(event) {
-  event.preventDefault();
+function handleSubmit(e) {
+  e.preventDefault();
 
-  const data = new FormData(event.target);
+  // using FormData API
+  const data = new FormData(e.target);
 
-  const value = Object.fromEntries(data.entries());
+  // gets entered values from inputs (textarea)
+  const allInputValues = Object.fromEntries(data.entries());
+
+  // gets entered values from radio btns
+  allInputValues.emojis = data.getAll("emojis");
 
   const results = document.getElementById("results");
-  results.innerText = JSON.stringify(value, null, 2);
+  results.innerText = JSON.stringify(allInputValues, null, 2);
 
-  console.log({ value });
-  console.log({ value }.value);
+  console.log(allInputValues);
 }
 
 const form = document.querySelector("form");
