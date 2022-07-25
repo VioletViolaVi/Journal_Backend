@@ -1,3 +1,17 @@
-const students = [{ name: "Sam" }, { name: "Mike" }, { name: "Chloe" }];
+const posts = [
+  {
+    post: "text",
+    gifAPI: "link",
+    comments: [
+      {
+        comment: "text",
+        love: 0,
+        like: 0,
+        dontlike: 0,
+        response: "text",
+      },
+    ],
+  },
+];
 
-module.exports = students;
+module.exports = posts;
