@@ -1,6 +1,5 @@
 const userPosts = [
   {
-    id: 1,
     singleJournalEntry: "original single user entry goes here, 1", // original user journal entry
     commentsSection: [
       "comments for 1st entry",
@@ -14,10 +13,10 @@ const userPosts = [
       like: 1,
       dontlike: 1,
     },
+    id: 1,
   },
 
   {
-    id: 2,
     singleJournalEntry: "original single user entry goes here, 2", // original user journal entry
     commentsSection: [
       "comments for 2nd entry",
@@ -31,10 +30,10 @@ const userPosts = [
       like: 2,
       dontlike: 2,
     },
+    id: 2,
   },
 
   {
-    id: 3,
     singleJournalEntry: "original single user entry goes here, 3", // original user journal entry
     commentsSection: [
       "comments for 3rd entry",
@@ -48,6 +47,7 @@ const userPosts = [
       like: 3,
       dontlike: 3,
     },
+    id: 3,
   },
 ];
 
