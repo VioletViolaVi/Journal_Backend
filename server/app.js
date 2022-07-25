@@ -24,6 +24,9 @@ app.get("/userPosts", (req, res) => {
 
 app.post("/userPosts", (req, res) => {
   const newUserPost = req.body;
+
+  newUserPost.id = data.length + 1; // for incrementing id num
+
   data.push(newUserPost);
 
   res.status(201).json({
