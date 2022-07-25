@@ -6,8 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname + "/../client"));
-const path = require("path");
+// app.use(express.static(__dirname + "/../client"));
+// const path = require("path");
 
 app.get("/", (req, res) => {
   res.status(200).send("Hello World");
@@ -18,34 +18,34 @@ app.get("/posts", (req, res) => {
   res.status(200).send(data);
 });
 
-app.get("/posts/post", (req, res) => {
-  res.status(200).send(data[0].post);
-});
-
-app.get("/posts/gifAPI", (req, res) => {
-  res.status(200).send(data[0].gifAPI);
-});
-
-app.get("/posts/comments/comment", (req, res) => {
-  res.status(200).send(data[0].comments[0].comment);
-});
-
-app.get("/posts/comments/love", (req, res) => {
-  res.status(200).send(data[0].comments[0].love.toString()); // needs .toString() to show
-});
-
-app.get("/posts/comments/like", (req, res) => {
-  res.status(200).send(data[0].comments[0].like.toString()); // needs .toString() to show
-});
-
-app.get("/posts/comments/dontlike", (req, res) => {
-  res.status(200).send(data[0].comments[0].dontlike.toString()); // needs .toString() to show
-});
-
 app.get("/posts/:id", (req, res) => {
   const id = req.params.id;
 
   res.status(200).send(data[id - 1]);
+});
+
+app.get("/post/:id", (req, res) => {
+  res.status(200).send(data[0].post);
+});
+
+app.get("/posts/:id/gifAPI", (req, res) => {
+  res.status(200).send(data[0].gifAPI); // not working
+});
+
+app.get("/posts/comments", (req, res) => {
+  res.status(200).send(data[0].comments);
+});
+
+app.get("/posts/:id/emojis/love", (req, res) => {
+  res.status(200).send(data[0].emojis.love.toString()); // needs .toString() to show
+});
+
+app.get("/posts/:id/emojis/like", (req, res) => {
+  res.status(200).send(data[0].emojis.like.toString()); // needs .toString() to show
+});
+
+app.get("/posts/:id/emojis/dontlike", (req, res) => {
+  res.status(200).send(data[0].emojis.dontlike.toString()); // needs .toString() to show
 });
 
 app.post("/posts", (req, res) => {
