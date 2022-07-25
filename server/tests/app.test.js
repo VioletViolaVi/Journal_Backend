@@ -10,7 +10,7 @@ describe("Checks if paths are correct", () => {
 
   beforeAll(() => {
     // start listening to a different server
-    api = app.listen(4000);
+    api = app.listen(4001);
   });
 
   // "done" parameter is a callback function, can be used to say "yes it's finished" to be extra safe - this callback function is found in jest
