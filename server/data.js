@@ -1,7 +1,3 @@
-const students = [
-  { id: 1, name: "Sam" },
-  { id: 1, name: "Mike" },
-  { id: 1, name: "Chloe" },
-];
+const students = [{ name: "Sam" }, { name: "Mike" }, { name: "Chloe" }];
 
 module.exports = students;
