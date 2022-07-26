@@ -2,7 +2,7 @@
 
 ## Project description
 
-This is the server side portion repository of a community journaling website. The client side portion repository of this website can be found [here](https://github.com/nasim1903/Journal-frontend) **_OR_** [here](https://github.com/nasim1903/Journal-Front-new). This client side repository is responsible to allowing users to see previous posts and/or comments made by other users on the journaling website. It interacts with the client side so the information can be seen by the users on the browser upon request. The server will also allow the user to see the post and/or comments made by themselves if they were, for example, to leave the site and come back. This project is made up of data.js file to store the user's inputs. It has an index.js file were the app listens on port 4000. It also has an app.js file which contains the `get()` and `post()` methods responsible to sending responses to requests. The package.json file located in this project contains all the modules and software that were installed. This project also contains tests that were used to ensure the project ran without errors.
+This is the server side portion repository of a community journaling website. The client side portion repository of this website can be found [here](https://github.com/nasim1903/Journal-frontend) **_OR_** [here](https://github.com/nasim1903/Journal-Front-new). This client side repository is responsible to allowing users to see previous posts and/or comments made by other users on the journaling website. It interacts with the client side so the information can be seen by the users on the browser upon request. The server will also allow the user to see the post and/or comments made by themselves if they were, for example, to leave the site and come back. This project is made up of data.js file to store the user's inputs. It has an index.js file were the app listens on port 3000. It also has an app.js file which contains the `get()` and `post()` methods responsible to sending responses to requests. The package.json file located in this project contains all the modules and software that were installed. This project also contains tests that were used to ensure the project ran without errors.
 
 ## Installation
 
@@ -16,7 +16,7 @@ This is the server side portion repository of a community journaling website. Th
 2. Open the terminal.
 3. In the terminal, navigate to the **_server_** folder.
 4. Enter **_node index.js_** in the terminal.
-5. The project will run at **_localhost:4000_**.
+5. The project will run at **_localhost:3000_**.
 
 ## Technologies
 
@@ -101,7 +101,7 @@ This is the server side portion repository of a community journaling website. Th
 
   ```
   function portHost() {
-  const port = 4000 || process.env.PORT;
+  const port = 3000 || process.env.PORT;
   return port;
   }
 
