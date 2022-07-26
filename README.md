@@ -1,4 +1,4 @@
-# LAP 1 Portfolio Week Project Backend
+# LAP 1 Portfolio Week Project Journal Backend
 
 ## Project description
 
