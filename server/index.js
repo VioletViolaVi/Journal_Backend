@@ -1,7 +1,7 @@
 const app = require("./app");
 
 function portHost() {
-  const port = process.env.PORT;
+  const port = 4000 || process.env.PORT;
   return port;
 }
 
