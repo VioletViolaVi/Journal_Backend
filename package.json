@@ -4,11 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build",
-    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
