@@ -128,13 +128,13 @@ This is the server side portion repository of a community journaling website. Th
 ## Screenshots/Images
 
 - Example structure of user posts:
-  ![alt text](readme_imgs/user_posts_arr.png)
+  ![User Posts Layout](readme_imgs/user_posts_arr.png)
 
 - Example of a get request on [Postman](https://www.postman.com/) with the **_Status: 200 OK_**.
-  ![alt text](readme_imgs/postman_get.png)
+  ![Postman Get Request](readme_imgs/postman_get.png)
 
 - Example of a post request made in [Postman](https://www.postman.com/) that responds with **_"success: "true"_**
-  ![alt text](readme_imgs/postman_post.png)
+  ![Postman Post Request](readme_imgs/postman_post.png)
 
 ## Wins
 
