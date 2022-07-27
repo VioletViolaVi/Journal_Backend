@@ -1,10 +1,12 @@
-const data = require("./data"); // aka => userPosts arr
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const fs = require("fs");
+
+const dataInJsonFile = JSON.parse(fs.readFileSync("data.json"), "utf-8");
 
 app.use(cors());
-app.use(express.json()); // this is middleware needed for post request & to read req.body
+app.use(express.json());
 
 /*
 app.use(express.static(__dirname + "/../client"));
@@ -19,22 +21,22 @@ app.get("/", (req, res) => {
 });
 
 app.get("/userPosts", (req, res) => {
-  res.status(200).send(data);
+  res.status(200).json(dataInJsonFile);
 });
 
 app.post("/userPosts", (req, res) => {
-  const newUserPost = req.body;
+  console.log(req.body);
 
-  // newUserPost.id = data.length + 1; // for incrementing id num
+  dataInJsonFile.userPostData.push(req.body);
 
-  data.push(newUserPost);
+  fs.writeFileSync("data.json", JSON.stringify(dataInJsonFile));
 
-  res.status(201).json({
+  res.status(200).json({
     success: true,
-    posts: newUserPost,
   });
 });
 
+/*
 app.get("/userPosts/:id", (req, res) => {
   const id = req.params.id;
 
@@ -124,5 +126,6 @@ app.get("/userPosts/:id/emojisCount/dontlike", (req, res) => {
 
   res.status(200).send(data[id - 1].emojisCount.dontlike.toString()); // needs .toString() to show
 });
+*/
 
 module.exports = app;
