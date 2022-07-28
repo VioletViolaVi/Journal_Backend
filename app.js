@@ -8,16 +8,8 @@ const dataInJsonFile = JSON.parse(fs.readFileSync("data.json"), "utf-8");
 app.use(cors());
 app.use(express.json()); // this is middleware needed for post request & to read req.body
 
-/*
-app.use(express.static(__dirname + "/../client"));
-const path = require("path");
-*/
-
 app.get("/", (req, res) => {
   res.status(200).send("User Journal Entries");
-  /*
-  res.sendFile(path.resolve("../client/index.html")) 
-  */
 });
 
 app.get("/userPosts", (req, res) => {
@@ -25,9 +17,13 @@ app.get("/userPosts", (req, res) => {
 });
 
 app.post("/userPosts", (req, res) => {
-  console.log(req.body);
-
   dataInJsonFile.userPostData.push(req.body);
+
+  let idCounter = 0;
+
+  dataInJsonFile.userPostData.forEach((singleObjInArr) => {
+    singleObjInArr.id = idCounter += 1;
+  });
 
   fs.writeFileSync("data.json", JSON.stringify(dataInJsonFile));
 
@@ -40,22 +36,27 @@ app.get("/userPosts/singleJournalEntry", (req, res) => {
   res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);
 });
 
-// the following routes make put requests using input entered by user in the journal blog website:
+/* the following routes make put requests using input entered by user in the journal blog website: */
 
 // :loves
 app.put("/userPosts/updateLoves", (req, res) => {
   let fromUser = req.body.emojisCount.love; // from user
-  console.log(fromUser);
 
   async function updateLovesInFile(lovesParam) {
     try {
       // read file 1st
       let dataFromJsonFile = await fsPromises.readFile("data.json");
-      // parse so it's readable
+      // parse so it's readable i.e {userPostData[{singleJournalEntry:""...}]} etc.
       let obj = JSON.parse(dataFromJsonFile);
 
+      // finds correct obj to update using its obj id
+      const userPostArr = obj.userPostData;
+      const userPostToFind = userPostArr.find((singleUserPostObj) => {
+        return singleUserPostObj.id === parseInt(req.body.id);
+      });
+
       // set love property in the obj that you are trying to change
-      obj.userPostData[0].emojisCount.love = lovesParam;
+      userPostToFind.emojisCount.love = lovesParam;
 
       // write file using what was read & the reassigned value
       await fsPromises.writeFile("data.json", JSON.stringify(obj));
@@ -82,8 +83,14 @@ app.put("/userPosts/updateLikes", (req, res) => {
       // parse so it's readable
       let obj = JSON.parse(dataFromJsonFile);
 
+      // finds correct obj to update using its obj id
+      const userPostArr = obj.userPostData;
+      const userPostToFind = userPostArr.find((singleUserPostObj) => {
+        return singleUserPostObj.id === parseInt(req.body.id);
+      });
+
       // set like property in the obj that you are trying to change
-      obj.userPostData[0].emojisCount.like = likesParam;
+      userPostToFind.emojisCount.like = likesParam;
 
       // write file using what was read & the reassigned value
       await fsPromises.writeFile("data.json", JSON.stringify(obj));
@@ -110,8 +117,14 @@ app.put("/userPosts/updateDislike", (req, res) => {
       // parse so it's readable
       let obj = JSON.parse(dataFromJsonFile);
 
+      // finds correct obj to update using its obj id
+      const userPostArr = obj.userPostData;
+      const userPostToFind = userPostArr.find((singleUserPostObj) => {
+        return singleUserPostObj.id === parseInt(req.body.id);
+      });
+
       // set like property in the obj that you are trying to change
-      obj.userPostData[0].emojisCount.dontlike = dislikesParam;
+      userPostToFind.emojisCount.dontlike = dislikesParam;
 
       // write file using what was read & the reassigned value
       await fsPromises.writeFile("data.json", JSON.stringify(obj));
