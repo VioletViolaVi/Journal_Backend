@@ -23,31 +23,39 @@ describe("Checks if paths are correct", () => {
     request(api).get("/").expect(200, done);
   });
 
-  it("Responds to a GET request at '/posts' with a 200 status", (done) => {
-    request(api).get("/posts").expect(200, done);
+  it("Responds to a GET request at '/userPosts' with a 200 status", (done) => {
+    request(api).get("/userPosts").expect(200, done);
   });
 
-  it("Responds to a GET request at '/posts/post' with a 200 status", (done) => {
-    request(api).get("/posts/post").expect(200, done);
+  // it("Responds to a GET request at '/posts/gifAPI' with a 200 status", (done) => {
+  //   request(api).get("/posts/gifAPI").expect(200, done);
+  // });
+
+  // it("Responds to a GET request at '/posts/comments/comment' with a 200 status", (done) => {
+  //   request(api).get("/posts/comments/comment").expect(200, done);
+  // });
+
+  // it("Responds to a GET request at '/posts/comments/love' with a 200 status", (done) => {
+  //   request(api).get("/posts/comments/love").expect(200, done);
+  // });
+
+  // it("Responds to a GET request at '/posts/comments/like' with a 200 status", (done) => {
+  //   request(api).get("/posts/comments/like").expect(200, done);
+  // });
+
+  // it("Responds to a GET request at '/posts/comments/dontlike' with a 200 status", (done) => {
+  //   request(api).get("/posts/comments/dontlike").expect(200, done);
+  // });
+});
+
+describe("Paths are to return the correct data types", () => {
+  test("Returns a string at '/userPosts/singleJournalEntry'", () => {
+    expect(typeof "http://localhost:3000/userPosts/singleJournalEntry").toBe(
+      "string"
+    );
   });
 
-  it("Responds to a GET request at '/posts/gifAPI' with a 200 status", (done) => {
-    request(api).get("/posts/gifAPI").expect(200, done);
-  });
-
-  it("Responds to a GET request at '/posts/comments/comment' with a 200 status", (done) => {
-    request(api).get("/posts/comments/comment").expect(200, done);
-  });
-
-  it("Responds to a GET request at '/posts/comments/love' with a 200 status", (done) => {
-    request(api).get("/posts/comments/love").expect(200, done);
-  });
-
-  it("Responds to a GET request at '/posts/comments/like' with a 200 status", (done) => {
-    request(api).get("/posts/comments/like").expect(200, done);
-  });
-
-  it("Responds to a GET request at '/posts/comments/dontlike' with a 200 status", (done) => {
-    request(api).get("/posts/comments/dontlike").expect(200, done);
+  test("To contain... '/userPosts/gifAPI'", () => {
+    expect("http://localhost:3000/userPosts/gifAPI").toContain();
   });
 });
