@@ -32,10 +32,6 @@ app.post("/userPosts", (req, res) => {
   });
 });
 
-app.get("/userPosts/singleJournalEntry", (req, res) => {
-  res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);
-});
-
 /* the following routes make put requests using input entered by user in the journal blog website: */
 
 // :loves
@@ -66,6 +62,7 @@ app.put("/userPosts/updateLoves", (req, res) => {
     }
   }
   updateLovesInFile(fromUser);
+  console.log("happy: =>", happy);
 
   res.status(200).json({
     success: true,
@@ -141,3 +138,8 @@ app.put("/userPosts/updateDislike", (req, res) => {
 });
 
 module.exports = app;
+
+// app.get("/userPosts/singleJournalEntry", (req, res) => {
+
+//   res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);
+// });
