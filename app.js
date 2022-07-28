@@ -137,9 +137,8 @@ app.put("/userPosts/updateDislike", (req, res) => {
   });
 });
 
+app.get("/userPosts/singleJournalEntry", (req, res) => {
+  res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);
+});
+
 module.exports = app;
-
-// app.get("/userPosts/singleJournalEntry", (req, res) => {
-
-//   res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);
-// });
