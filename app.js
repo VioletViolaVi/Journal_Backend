@@ -69,73 +69,73 @@ app.put("/userPosts/updateLoves", (req, res) => {
   });
 });
 
-// :likes
-app.put("/userPosts/updateLikes", (req, res) => {
-  let fromUser = req.body.emojisCount.like; // from user
+// // :likes
+// app.put("/userPosts/updateLikes", (req, res) => {
+//   let fromUser = req.body.emojisCount.like; // from user
 
-  async function updateLikesInFile(likesParam) {
-    try {
-      // read file 1st
-      let dataFromJsonFile = await fsPromises.readFile("data.json");
-      // parse so it's readable
-      let obj = JSON.parse(dataFromJsonFile);
+//   async function updateLikesInFile(likesParam) {
+//     try {
+//       // read file 1st
+//       let dataFromJsonFile = await fsPromises.readFile("data.json");
+//       // parse so it's readable
+//       let obj = JSON.parse(dataFromJsonFile);
 
-      // finds correct obj to update using its obj id
-      const userPostArr = obj.userPostData;
-      const userPostToFind = userPostArr.find((singleUserPostObj) => {
-        return singleUserPostObj.id === parseInt(req.body.id);
-      });
+//       // finds correct obj to update using its obj id
+//       const userPostArr = obj.userPostData;
+//       const userPostToFind = userPostArr.find((singleUserPostObj) => {
+//         return singleUserPostObj.id === parseInt(req.body.id);
+//       });
 
-      // set like property in the obj that you are trying to change
-      userPostToFind.emojisCount.like = likesParam;
+//       // set like property in the obj that you are trying to change
+//       userPostToFind.emojisCount.like = likesParam;
 
-      // write file using what was read & the reassigned value
-      await fsPromises.writeFile("data.json", JSON.stringify(obj));
-    } catch (e) {
-      // error handling here
-      console.log(e);
-    }
-  }
-  updateLikesInFile(fromUser);
+//       // write file using what was read & the reassigned value
+//       await fsPromises.writeFile("data.json", JSON.stringify(obj));
+//     } catch (e) {
+//       // error handling here
+//       console.log(e);
+//     }
+//   }
+//   updateLikesInFile(fromUser);
 
-  res.status(200).json({
-    success: true,
-  });
-});
+//   res.status(200).json({
+//     success: true,
+//   });
+// });
 
-// :dislike
-app.put("/userPosts/updateDislike", (req, res) => {
-  let fromUser = req.body.emojisCount.dontlike; // from user
+// // :dislike
+// app.put("/userPosts/updateDislike", (req, res) => {
+//   let fromUser = req.body.emojisCount.dontlike; // from user
 
-  async function updateDislikesInFile(dislikesParam) {
-    try {
-      // read file 1st
-      let dataFromJsonFile = await fsPromises.readFile("data.json");
-      // parse so it's readable
-      let obj = JSON.parse(dataFromJsonFile);
+//   async function updateDislikesInFile(dislikesParam) {
+//     try {
+//       // read file 1st
+//       let dataFromJsonFile = await fsPromises.readFile("data.json");
+//       // parse so it's readable
+//       let obj = JSON.parse(dataFromJsonFile);
 
-      // finds correct obj to update using its obj id
-      const userPostArr = obj.userPostData;
-      const userPostToFind = userPostArr.find((singleUserPostObj) => {
-        return singleUserPostObj.id === parseInt(req.body.id);
-      });
+//       // finds correct obj to update using its obj id
+//       const userPostArr = obj.userPostData;
+//       const userPostToFind = userPostArr.find((singleUserPostObj) => {
+//         return singleUserPostObj.id === parseInt(req.body.id);
+//       });
 
-      // set like property in the obj that you are trying to change
-      userPostToFind.emojisCount.dontlike = dislikesParam;
+//       // set like property in the obj that you are trying to change
+//       userPostToFind.emojisCount.dontlike = dislikesParam;
 
-      // write file using what was read & the reassigned value
-      await fsPromises.writeFile("data.json", JSON.stringify(obj));
-    } catch (e) {
-      // error handling here
-      console.log(e);
-    }
-  }
-  updateDislikesInFile(fromUser);
+//       // write file using what was read & the reassigned value
+//       await fsPromises.writeFile("data.json", JSON.stringify(obj));
+//     } catch (e) {
+//       // error handling here
+//       console.log(e);
+//     }
+//   }
+//   updateDislikesInFile(fromUser);
 
-  res.status(200).json({
-    success: true,
-  });
-});
+//   res.status(200).json({
+//     success: true,
+//   });
+// });
 
 app.get("/userPosts/singleJournalEntry", (req, res) => {
   res.status(200).json(dataInJsonFile.userPostData[0].singleJournalEntry);

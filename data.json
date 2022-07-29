@@ -1,18 +1,1 @@
-{
-  "userPostData": [
-    {
-      "singleJournalEntry": "Hello! This is our journaling website! \nWe hope you enjoy it!\n\nVivian, Nasim, Daniel & Ioana",
-      "gifAPI": "https://media2.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=a9f7e204jkfa1ahbmjyj90s4hngo43bj6amqzpvkhwn2w67r&rid=giphy.gif&ct=g",
-      "commentsSection": ["what a nice greeting"],
-      "emojisCount": { "love": 124, "like": 1, "dontlike": 1 },
-      "id": 1
-    },
-    {
-      "singleJournalEntry": "i saw a bird in the sky",
-      "gifAPI": "https://media0.giphy.com/media/oFI7FttD0iC8V2Iqmy/giphy.gif?cid=a9f7e204ufkd4zh0a44enz4b29kbtej8xg1bezxju7bxu4m0&rid=giphy.gif&ct=g",
-      "commentsSection": ["i don't like birds"],
-      "emojisCount": { "love": 0, "like": 0, "dontlike": 7 },
-      "id": 2
-    }
-  ]
-}
+{"userPostData":[{"singleJournalEntry":"Hello! This is our journaling website! \nWe hope you enjoy it!\n\nVivian, Nasim, Daniel & Ioana","gifAPI":"https://media2.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=a9f7e204jkfa1ahbmjyj90s4hngo43bj6amqzpvkhwn2w67r&rid=giphy.gif&ct=g","commentsSection":["what a nice greeting"],"emojisCount":{"love":124,"like":1,"dontlike":1},"id":1},{"singleJournalEntry":"i saw a bird in the sky","gifAPI":"https://media0.giphy.com/media/oFI7FttD0iC8V2Iqmy/giphy.gif?cid=a9f7e204ufkd4zh0a44enz4b29kbtej8xg1bezxju7bxu4m0&rid=giphy.gif&ct=g","commentsSection":["i don't like birds"],"emojisCount":{"love":0,"like":0,"dontlike":7},"id":2},{"singleJournalEntry":"This is a test post","gifAPI":"https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g","commentsSection":["this is a test comment"],"emojisCount":{"love":3,"like":45,"dontlike":1},"id":3},{"singleJournalEntry":"This is a test post","gifAPI":"https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g","commentsSection":["this is a test comment"],"emojisCount":{"love":3,"like":45,"dontlike":1},"id":4},{"singleJournalEntry":"This is a test post","gifAPI":"https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g","commentsSection":["this is a test comment"],"emojisCount":{"love":3,"like":45,"dontlike":1},"id":5},{"singleJournalEntry":"This is a test post","gifAPI":"https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g","commentsSection":["this is a test comment"],"emojisCount":{"love":3,"like":45,"dontlike":1},"id":6},{"singleJournalEntry":"This is a test post","gifAPI":"https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g","commentsSection":["this is a test comment"],"emojisCount":{"love":3,"like":45,"dontlike":1},"id":7}]}

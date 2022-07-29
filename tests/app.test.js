@@ -90,16 +90,16 @@ describe("Testing PUT requests", function () {
       });
   });
 
-  it("Path /userPosts/updateLoves should return 500", function (done) {
-    request(app)
-      .put("/userPosts/updateLoves")
-      .set("Accept", "application/json")
-      .expect(500)
-      .end(function (err, res) {
-        if (err) return done(err);
-        return done();
-      });
-  });
+  // it("Path /userPosts/updateLoves should return 500", function (done) {
+  //   request(app)
+  //     .put("/userPosts/updateLoves")
+  //     .set("Accept", "application/json")
+  //     .expect(500)
+  //     .end(function (err, res) {
+  //       if (err) return done(err);
+  //       return done();
+  //     });
+  // });
 });
 
 describe("Paths are to return the correct data types", () => {
