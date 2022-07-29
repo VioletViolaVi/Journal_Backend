@@ -48,59 +48,59 @@ describe("Paths are to return a 404 error if they do not exist", () => {
   });
 });
 
-describe("Testing POST requests", function () {
-  it("Path /userPosts should respond with json", function (done) {
-    const exampleObj = {
-      singleJournalEntry: "This is a test post",
-      gifAPI:
-        "https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g",
-      commentsSection: ["this is a test comment"],
-      emojisCount: { love: 3, like: 45, dontlike: 1 },
-      id: 1,
-    };
+// describe("Testing POST requests", function () {
+//   it("Path /userPosts should respond with json", function (done) {
+//     const exampleObj = {
+//       singleJournalEntry: "This is a test post",
+//       gifAPI:
+//         "https://media4.giphy.com/media/gw3IWyGkC0rsazTi/giphy.gif?cid=a9f7e2041dml0i13du0sisptuftopn3t9qo6i4sspqep5aev&rid=giphy.gif&ct=g",
+//       commentsSection: ["this is a test comment"],
+//       emojisCount: { love: 3, like: 45, dontlike: 1 },
+//       id: 1,
+//     };
 
-    request(app)
-      .post("/userPosts")
-      .send(exampleObj)
-      .set("Accept", "application/json")
-      .expect("Content-Type", /json/)
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        return done();
-      });
-  });
-});
+//     request(app)
+//       .post("/userPosts")
+//       .send(exampleObj)
+//       .set("Accept", "application/json")
+//       .expect("Content-Type", /json/)
+//       .expect(200)
+//       .end(function (err, res) {
+//         if (err) return done(err);
+//         return done();
+//       });
+//   });
+// });
 
-describe("Testing PUT requests", function () {
-  it("Path /userPosts/updateLoves should respond with json", function (done) {
-    const exampleObj = {
-      singleJournalEntry: "This is an updated test post",
-      id: 3,
-    };
-    request(app)
-      .put("/userPosts/updateLoves")
-      .send(exampleObj)
-      .set("Accept", "application/json")
-      // .expect("Content-Type", /json/)
-      // .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        return done();
-      });
-  });
+// describe("Testing PUT requests", function () {
+//   it("Path /userPosts/updateLoves should respond with json", function (done) {
+//     const exampleObj = {
+//       singleJournalEntry: "This is an updated test post",
+//       id: 3,
+//     };
+//     request(app)
+//       .put("/userPosts/updateLoves")
+//       .send(exampleObj)
+//       .set("Accept", "application/json")
+//       // .expect("Content-Type", /json/)
+//       // .expect(200)
+//       .end(function (err, res) {
+//         if (err) return done(err);
+//         return done();
+//       });
+//   });
 
-  // it("Path /userPosts/updateLoves should return 500", function (done) {
-  //   request(app)
-  //     .put("/userPosts/updateLoves")
-  //     .set("Accept", "application/json")
-  //     .expect(500)
-  //     .end(function (err, res) {
-  //       if (err) return done(err);
-  //       return done();
-  //     });
-  // });
-});
+//   // it("Path /userPosts/updateLoves should return 500", function (done) {
+//   //   request(app)
+//   //     .put("/userPosts/updateLoves")
+//   //     .set("Accept", "application/json")
+//   //     .expect(500)
+//   //     .end(function (err, res) {
+//   //       if (err) return done(err);
+//   //       return done();
+//   //     });
+//   // });
+// });
 
 describe("Paths are to return the correct data types", () => {
   test("Returns a string at '/'", () => {
